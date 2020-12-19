@@ -3,6 +3,7 @@ import Todo from './Todo';
 
 
 export default function TodoList({todos, setTodos, filteredTodos}){
+    console.log(filteredTodos);
     const myTodo = filteredTodos.map(todo => (
         <Todo 
             text={todo.text} 

@@ -9,14 +9,13 @@ export default function Form({todos, setTodos, inputText, setInputText, setStatu
   }
 
   const submitTodoHandler = (e) =>{
-    /* if(e.target.value !== ''){
-      
-    } */
     e.preventDefault(); // Stop reloading the page after enter
-    setTodos([
-      ...todos, {text:inputText, completed:false, id:Math.random()*10000}
-    ]);
-    setInputText('');
+    if(inputText !== ''){
+      setTodos([
+        ...todos, {text:inputText, completed:false, id:Math.random()*10000, edited:false}
+      ]);
+      setInputText('');      
+    } 
   }
 
   const statusHandler = (e) => {
